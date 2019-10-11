@@ -1,20 +1,21 @@
 #include<IRremote.h>
-int recvPin = 12;
+int recvPin = 12;  // CONNECT THE OUTPUT PIN OF THE IR RECIEVER TO THIS PIN
 int c = 0;
 IRrecv irrecv(recvPin);
 decode_results results;
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
 irrecv.enableIRIn();
-
+pinMode(LED_BUILTIN,OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 if(irrecv.decode(&results))
 {
   Serial.println(results.value,HEX);
   irrecv.resume();
+  digitalWrite(LED_BUILTIN,HIGH);
+  delay(500);
 }
+  digitalWrite(LED_BUILTIN,LOW);
 }
