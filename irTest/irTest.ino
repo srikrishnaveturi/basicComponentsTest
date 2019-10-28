@@ -10,10 +10,10 @@ pinMode(LED_BUILTIN,OUTPUT);
 for arduino uno, connect to digital pin 3, for arduino mega, it is pin 9..*/
 void loop() {
   // put your main code here, to run repeatedly:
-irsend.sendNEC(0x12345678,32); //sends message in HEX 
-Serial.println("CODE SENT"); //prints on serial monitor
+irsend.sendNEC(0b0101010101,32); //sends message in HEX 
+Serial.println("done"); //prints on serial monitor
 digitalWrite(LED_BUILTIN,HIGH);// built-in led glows
-delay(100);
+delay(500);
 digitalWrite(LED_BUILTIN,LOW);
-delay(100);
+delay(500);
 }
