@@ -7,16 +7,9 @@ nameServo.attach(9);
 }
 
 void loop() {
-  for (position = 0;position<= 180;position ++)
-  {
-    nameServo.write(position);
-    delay(10);
-  }
-  // put your main code here, to run repeatedly:
-
-for (position = 180;position>= 0;position --);
-  {
-    nameServo.write(position);
-    delay(10);
-  }
+  nameServo.write(0);
+  delay(500);
+  nameServo.write(180);
+  delay(500);
+  
 }
