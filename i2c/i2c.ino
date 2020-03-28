@@ -1,3 +1,4 @@
+//this code is to find the address of any i2c device
 #include <Wire.h> 
  
 void setup()
